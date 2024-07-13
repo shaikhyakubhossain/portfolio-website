@@ -1,5 +1,9 @@
+import HeroHeader from "./HeroHeader/hero-header.component";
+
 export default function Home() {
     return (
-        <div></div>
+        <div>
+            <HeroHeader />
+        </div>
     );
 };
