@@ -1,3 +1,4 @@
+import './globals.css'
 import HeroHeader from "./HeroHeader/hero-header.component";
 
 export default function Home() {
