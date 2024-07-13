@@ -1,5 +1,5 @@
 import './globals.css'
-import HeroHeader from "./HeroHeader/hero-header.component";
+import HeroHeader from "./component/HeroHeader/hero-header.component";
 
 export default function Home() {
     return (
