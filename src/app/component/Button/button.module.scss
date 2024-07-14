@@ -1,5 +1,6 @@
 @use '../../constants/CssUtils/color.scss';
 
 .btn {
+    color: color.$colorPrimary;
     border-color: color.$colorPrimary;
 }

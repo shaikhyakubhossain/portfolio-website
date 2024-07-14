@@ -1,9 +1,16 @@
+@use '../../constants/CssUtils/color.scss';
+
 .mainContainer {
     // position: relative;
 }
 
 .heroText {
     
+}
+
+.heroName {
+    color: color.$colorPrimary;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .heroImage {
