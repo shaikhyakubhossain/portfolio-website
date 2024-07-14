@@ -8,7 +8,7 @@ type propsType = {
 
 export default function SkillCard(props: propsType): JSX.Element {
     return (
-        <div className={`${styles.mainContainer} `}>
+        <div className={`${styles.mainContainer} p-14 rounded shadow-lg shadow-slate-600`}>
             <div>{props.skillIcon}</div>
             <div>{props.skillTitle}</div>
         </div>
