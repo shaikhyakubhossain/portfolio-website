@@ -1,11 +1,9 @@
-
 import styles from './skills-section.module.scss';
-import SkillCard from '../SkillCard/skill-card.component';
 
 
 
 type propsType = {
-    skillsList: string[]
+    children: React.ReactNode 
 }
 
 export default function SkillsSection(props: propsType): JSX.Element {
@@ -13,13 +11,7 @@ export default function SkillsSection(props: propsType): JSX.Element {
         <div className={`${styles.mainContainer} `}>
             <div className={`${styles.headingMySkills} `} >My Skills</div>
             <div className={`${styles.skillsContainer} flex flex-wrap `}>
-                {
-                    props.skillsList.map((item, index): JSX.Element => {
-                        return (
-                            <SkillCard skillIcon={item.skillIcon} skillTitle={item.skillTitle} />
-                        )
-                    })
-                }
+                {props.children}
             </div>
         </div>
     )
