@@ -1,5 +1,7 @@
 
 import styles from './skills-section.module.scss';
+import SkillCard from '../SkillCard/skill-card.component';
+
 
 
 type propsType = {
@@ -14,7 +16,7 @@ export default function SkillsSection(props: propsType): JSX.Element {
                 {
                     props.skillsList.map((item, index): JSX.Element => {
                         return (
-                            <div></div>
+                            <SkillCard skillIcon={item.skillIcon} skillTitle={item.skillTitle} />
                         )
                     })
                 }
