@@ -8,8 +8,8 @@ type propsType = {
 
 export default function SkillsSection(props: propsType): JSX.Element {
     return (
-        <div className={`${styles.mainContainer} `}>
-            <div className={`${styles.headingMySkills} `} >My Skills</div>
+        <div className={`${styles.mainContainer} text-center`}>
+            <div className={`${styles.headingMySkills} text-4xl font-bold `} >My Skills</div>
             <div className={`${styles.skillsContainer} flex flex-wrap `}>
                 {props.children}
             </div>
