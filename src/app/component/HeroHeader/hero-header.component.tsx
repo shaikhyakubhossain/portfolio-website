@@ -1,5 +1,6 @@
 import styles from './hero-header.module.scss';
 import Button from '../Button/button.component';
+import VerticalLinks from '../VerticalLink/vertical-link.component';
 
 export default function HeroHeader() {
     return (
@@ -9,6 +10,7 @@ export default function HeroHeader() {
                 <Button>Contact Me</Button>
             </div>
             <div className={`${styles.heroImage}`}><img className={`h-96`} src="https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png" alt="test-image" /></div>
+            <VerticalLinks />
         </div>
     )
 }
