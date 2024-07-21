@@ -4,7 +4,7 @@ import VerticalLinks from '../VerticalLink/vertical-link.component';
 
 export default function HeroHeader() {
     return (
-        <div className={`${styles.mainContainer} flex justify-between w-full h-96 px-32`}>
+        <div className={`${styles.mainContainer} flex justify-between w-full h-96 px-32 mt-12`}>
             <div className={`${styles.heroTextAndBtnContainer} my-auto`}>
                 <div className={`${styles.heroText} my-6 text-2xl text-white`}>I'M <span className={`${styles.heroName} text-4xl`}>Shaikh Yakub Hossain</span><br />Full Stack Developer</div>
                 <Button>Contact Me</Button>
