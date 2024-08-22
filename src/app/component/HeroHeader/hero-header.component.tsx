@@ -2,11 +2,16 @@ import styles from './hero-header.module.scss';
 import Button from '../Button/button.component';
 import VerticalLinks from '../VerticalLink/vertical-link.component';
 
-export default function HeroHeader() {
+type propsType = {
+    name: string,
+    subTitle: string
+}
+
+export default function HeroHeader(props: propsType): JSX.Element {
     return (
         <div className={`${styles.mainContainer} flex justify-between w-full h-96 px-32 mt-12`}>
             <div className={`${styles.heroTextAndBtnContainer} my-auto`}>
-                <div className={`${styles.heroText} my-6 text-2xl text-white`}>I'M <span className={`${styles.heroName} text-4xl`}>Shaikh Yakub Hossain</span><br />Full Stack Developer</div>
+                <div className={`${styles.heroText} my-6 text-2xl text-white`}>I'M <span className={`${styles.heroName} text-4xl`}>{props.name}</span><br />{props.subTitle}</div>
                 <Button>Contact Me</Button>
             </div>
             <div className={`${styles.heroImage}`}><img className={`h-96`} src="https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_960_720.png" alt="test-image" /></div>

@@ -7,6 +7,7 @@ import Nav from './component/Nav/nav.component';
 
 type data = {
     name: string,
+    subTitle: string,
     aboutMe: string,
     skillsList: skillListType[]
 }
@@ -24,7 +25,7 @@ export default async function Home(): Promise<JSX.Element> {
     return (
         <div className={`bg-slate-800 text-white`}>
             <Nav />
-            <HeroHeader />
+            <HeroHeader name={data.name} subTitle={data.subTitle} />
             <About aboutMe={data.aboutMe}/>
             <SkillsSection>
                 {
