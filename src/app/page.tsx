@@ -5,6 +5,12 @@ import SkillsSection from './component/SkillsSection/skills-section.component';
 import SkillCard from './component/SkillCard/skill-card.component';
 import Nav from './component/Nav/nav.component';
 
+type data = {
+    name: string,
+    aboutMe: string,
+    skillsList: skillListType[]
+}
+
 type skillListType = {
     skillIcon: string,
     skillTitle: string
@@ -12,17 +18,17 @@ type skillListType = {
 
 export default async function Home(): Promise<JSX.Element> {
 
-    const response = await fetch("http://localhost:4000/userSkillsData");
-    const data: skillListType[] = await response.json();
+    const response = await fetch("http://localhost:4000/userSkillsData", { cache: "no-store" });
+    const data: data = await response.json();
 
     return (
         <div className={`bg-slate-800 text-white`}>
             <Nav />
             <HeroHeader />
-            <About />
+            <About aboutMe={data.aboutMe}/>
             <SkillsSection>
                 {
-                    data ? data.map((item: skillListType, index: number): JSX.Element | false => {
+                    data.skillsList ? data.skillsList.map((item: skillListType, index: number): JSX.Element | false => {
                         return (
                             item.skillIcon !== "" && <SkillCard key={index} skillIcon={item.skillIcon} skillTitle={item.skillTitle} />
                         )
