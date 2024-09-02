@@ -1,6 +1,12 @@
 @use '../../constants/CssUtils/color.scss';
 
 
+.mainContainer {
+    height: 90dvh
+
+}
+
 .longDash {
     color: color.$colorPrimary;
 }
+

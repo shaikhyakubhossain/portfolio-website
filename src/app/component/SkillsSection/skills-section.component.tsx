@@ -18,12 +18,14 @@ export default function SkillsSection(props: propsType): JSX.Element {
     }
 
     return (
-        <div className={`${styles.mainContainer} text-center mb-8`}>
-            <div className={`${styles.headingMySkills} text-4xl font-bold mb-12`} >My Skills</div>
-            <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-56" : null}`}>
-                {props.children}
+        <div id='Skills' className={`${styles.mainContainer} flex text-center mb-8`}>
+            <div className='my-auto'>
+                <div className={`${styles.headingMySkills} text-4xl font-bold mb-12`} >My Skills</div>
+                    <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-56" : null}`}>
+                    {props.children}
+                    </div>
+                <div className={`${styles.moreBtnContainer}`}><div className={`${expanded ? styles.moreBtnExpanded : styles.moreBtnMinimized } mx-auto`} onClick={handleSkillSectionExpand}></div></div>
             </div>
-            <div className={`${styles.moreBtnContainer}`}><div className={`${expanded ? styles.moreBtnExpanded : styles.moreBtnMinimized } mx-auto`} onClick={handleSkillSectionExpand}></div></div>
         </div>
     )
 }
