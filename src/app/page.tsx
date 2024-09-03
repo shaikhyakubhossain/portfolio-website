@@ -4,6 +4,7 @@ import About from './component/About/about.component';
 import SkillsSection from './component/SkillsSection/skills-section.component';
 import SkillCard from './component/SkillCard/skill-card.component';
 import Nav from './component/Nav/nav.component';
+import ProjectsSection from './component/ProjectsSection/projects-section.component';
 
 type data = {
     name: string,
@@ -36,7 +37,7 @@ export default async function Home(): Promise<JSX.Element> {
                     }) : null
                 }
             </SkillsSection>
-        
+        <ProjectsSection />
         </div>
     );
 };
