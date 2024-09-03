@@ -5,18 +5,9 @@ import SkillsSection from './component/SkillsSection/skills-section.component';
 import SkillCard from './component/SkillCard/skill-card.component';
 import Nav from './component/Nav/nav.component';
 import ProjectsSection from './component/ProjectsSection/projects-section.component';
+import type { data, skillListType } from '../app/constants/Types/api-data'
 
-type data = {
-    name: string,
-    subTitle: string,
-    aboutMe: string,
-    skillsList: skillListType[]
-}
 
-type skillListType = {
-    skillIcon: string,
-    skillTitle: string
-}
 
 export default async function Home(): Promise<JSX.Element> {
 
@@ -37,7 +28,9 @@ export default async function Home(): Promise<JSX.Element> {
                     }) : null
                 }
             </SkillsSection>
-        <ProjectsSection />
+            {
+                data.projectsList ? <ProjectsSection projectList={data.projectsList} /> : null
+            }
         </div>
     );
 };
