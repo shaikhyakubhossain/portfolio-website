@@ -8,7 +8,7 @@ type propsType = {
     children: React.ReactNode 
 }
 
-export default function SkillsSection(props: propsType): JSX.Element {
+ const SkillsSection = (props: propsType): JSX.Element => {
 
     const [expanded, setExpanded] = useState(true);
 
@@ -18,10 +18,10 @@ export default function SkillsSection(props: propsType): JSX.Element {
     }
 
     return (
-        <div id='Skills' className={`${styles.mainContainer} flex text-center mb-8`}>
+        <div id='Skills' className={`${styles.mainContainer} flex text-center my-20`}>
             <div className='my-auto'>
                 <div className={`${styles.headingMySkills} text-4xl font-bold mb-12`} >My Skills</div>
-                    <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-56" : null}`}>
+                    <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-56" : ""}`}>
                     {props.children}
                     </div>
                 <div className={`${styles.moreBtnContainer}`}><div className={`${expanded ? styles.moreBtnExpanded : styles.moreBtnMinimized } mx-auto`} onClick={handleSkillSectionExpand}></div></div>
@@ -29,3 +29,5 @@ export default function SkillsSection(props: propsType): JSX.Element {
         </div>
     )
 }
+
+export default SkillsSection;

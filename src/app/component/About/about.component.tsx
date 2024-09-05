@@ -7,7 +7,7 @@ type propsType ={
 
 export default function About(props: propsType): JSX.Element {
     return (
-        <div id="About" className={`${styles.mainContainer} flex`}>
+        <div id="About" className={`${styles.mainContainer} flex my-20`}>
             <div className="my-auto">
             <div className={`${styles.heading} text-4xl font-bold mb-4 ml-40`}>About</div>
                 <div className={`${styles.paragraphContainer} flex justify-center`}>
