@@ -15,7 +15,7 @@ export default async function Home(): Promise<JSX.Element> {
     const data: data = await response.json();
 
     return (
-        <div className={`bg-slate-800 text-white`}>
+        <div className={`bg-slate-800 text-white h-dvh overflow-y-auto`} style={{ scrollbarWidth: "none" }}>
             <Nav />
             <HeroHeader name={data.name} subTitle={data.subTitle} />
             <About aboutMe={data.aboutMe}/>
