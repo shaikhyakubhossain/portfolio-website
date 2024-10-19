@@ -18,7 +18,7 @@ type propsType = {
     }
 
     return (
-        <div id='Skills' className={`${styles.mainContainer} flex text-center my-20`}>
+        <div id='Skills' className={`${styles.mainContainer} flex text-center mt-60 pt-40`}>
             <div className='my-auto'>
                 <div className={`${styles.headingMySkills} text-4xl font-bold mb-12`} >My Skills</div>
                     <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-56" : ""}`}>

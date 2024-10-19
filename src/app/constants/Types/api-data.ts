@@ -16,7 +16,8 @@ export type projectList = {
     projectImageUrl: string,
     projectDescription: string,
     projectTechStack: string[],
-    projectLinks: projectLinks[]
+    projectLinks: projectLinks[],
+    projectDate: string
 }
 
 export type projectLinks = {

@@ -9,12 +9,12 @@ type propsType = {
 
 const ProjectsSection = (props: propsType) => {
     return (
-        <div id='Project' className={`${styles.mainContainer} flex text-center my-20`}>
+        <div id='Project' className={`${styles.mainContainer} flex mt-60 pt-40`}>
             <div className='m-auto'>
-                <div className={`${styles.headingMyProjects} text-4xl font-bold mb-12`}>My Projects</div>
-                <div className=' flex flex-wrap justify-center'>
+                <div className={`${styles.headingMyProjects} text-center text-4xl font-bold mb-12`}>My Projects</div>
+                <div className={`${styles.projectsContainer}`}>
                     { 
-                        props.projectList.map((item, index) => <ProjectCard key={index} projectTitle={item.projectTitle} projectImageUrl={item.projectImageUrl} projectDescription={item.projectDescription} projectTechStack={item.projectTechStack} projectLinks={item.projectLinks} />)
+                        props.projectList.map((item, index) => <ProjectCard key={index} projectTitle={item.projectTitle} projectImageUrl={item.projectImageUrl} projectDescription={item.projectDescription} projectTechStack={item.projectTechStack} projectLinks={item.projectLinks} projectDate={item.projectDate} />)
                     }
                 </div>
             </div>
