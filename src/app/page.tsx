@@ -1,6 +1,7 @@
 import './globals.css'
 import HeroHeader from "./component/HeroHeader/hero-header.component";
 import About from './component/About/about.component';
+import ContactMe from './component/ContactMe/contact-me.component';
 import SkillsSection from './component/SkillsSection/skills-section.component';
 import SkillCard from './component/SkillCard/skill-card.component';
 import Nav from './component/Nav/nav.component';
@@ -31,6 +32,7 @@ export default async function Home(): Promise<JSX.Element> {
             {
                 data.projectsList ? <ProjectsSection projectList={data.projectsList} /> : null
             }
+            <ContactMe />
         </div>
     );
 };
