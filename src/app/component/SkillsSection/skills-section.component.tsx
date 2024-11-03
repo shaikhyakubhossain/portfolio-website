@@ -12,19 +12,14 @@ type propsType = {
 
     const [expanded, setExpanded] = useState(true);
 
-    const handleSkillSectionExpand = () => {
-        
-        expanded ? setExpanded(false) : setExpanded(true)
-    }
-
     return (
         <div id='Skills' className={`${styles.mainContainer} flex text-center mt-60 pt-40`}>
             <div className='my-auto'>
                 <div className={`${styles.headingMySkills} text-4xl font-bold mb-12`} >My Skills</div>
-                    <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-56" : ""}`}>
+                    <div className={`${styles.skillsContainer} flex flex-wrap px-20 justify-center overflow-hidden ${expanded ? "h-60" : ""}`}>
                     {props.children}
                     </div>
-                <div className={`${styles.moreBtnContainer}`}><div className={`${expanded ? styles.moreBtnExpanded : styles.moreBtnMinimized } mx-auto`} onClick={handleSkillSectionExpand}></div></div>
+                <div className={`${styles.moreBtnContainer} mt-2`}><div className={`${expanded ? styles.moreBtnExpanded : styles.moreBtnMinimized } mx-auto`} onClick={() => setExpanded(!expanded)}></div></div>
             </div>
         </div>
     )
