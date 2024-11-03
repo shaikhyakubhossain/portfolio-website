@@ -3,8 +3,8 @@ import styles from './nav.module.scss'
 
 export default function Nav(): JSX.Element {
     return (
-        <div className={`${styles.mainContainer} flex justify-between fixed top-0 left-0 right-0 px-20 bg-slate-800 shadow-lg h-12`}>
-            <div className={`${styles.leftContainer} ${styles.portfolioTextContainer} my-auto`}><div>portfolio.</div></div>
+        <div className={`${styles.mainContainer} flex justify-between font-semibold fixed top-0 left-0 right-0 px-20 bg-slate-800 shadow-lg h-12`}>
+            <div className={`${styles.leftContainer} ${styles.portfolioTextContainer} my-auto`}><div>Portfolio.</div></div>
             <div className={`${styles.rightContainer} flex my-auto`}>
                 <div><a href='#Home'>Home</a></div>
                 <div><a href='#About'>About</a></div>

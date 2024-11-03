@@ -1,3 +1,5 @@
+@use '../../constants/CssUtils/color.scss' as c;
+
 .mainContainer {
     // height: ;
 }
@@ -9,6 +11,7 @@
     border-bottom: 8px solid transparent;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
+    transition: border 250ms;
 }
 
 .moreBtnMinimized {
@@ -18,12 +21,14 @@
     border-bottom: 24px solid #f0f0f0;
     border-left: 24px solid transparent;
     border-right: 24px solid transparent;
+    transition: border 250ms;
+
 }
 
 .moreBtnExpanded:hover {
-    border-top: 24px solid #959595;
+    border-top: 24px solid c.$colorPrimary;
 }
 
 .moreBtnMinimized:hover {
-    border-bottom: 24px solid #959595;
+    border-bottom: 24px solid c.$colorPrimary;
 }

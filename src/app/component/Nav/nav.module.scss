@@ -1,5 +1,13 @@
+@use '../../constants/CssUtils/color.scss' as c;
+
 .rightContainer > div {
     margin-left: 20px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 250ms;
+}
+
+.rightContainer > div:hover {
+    border-bottom: 2px solid c.$colorPrimary;
 }
 
 .mainContainer {
