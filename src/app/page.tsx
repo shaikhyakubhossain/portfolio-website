@@ -14,11 +14,12 @@ export default async function Home(): Promise<JSX.Element> {
 
     const response = await fetch("http://localhost:4000/userSkillsData", { cache: "no-store" });
     const data: data = await response.json();
+    console.log(data);
 
     return (
         <div className={`bg-black text-white h-dvh py-8 overflow-y-auto`} style={{ scrollbarWidth: "none" }}>
             <Nav />
-            <HeroHeader name={data.name} subTitle={data.subTitle} verticalLinks={data.verticalLinks} />
+            <HeroHeader name={data.name} subTitle={data.subTitle} verticalLinks={data.verticalLink} />
             <About aboutMe={data.aboutMe}/>
             <SkillsSection>
                 {
