@@ -2,10 +2,12 @@ import styles from './hero-header.module.scss';
 import Button from '../Button/button.component';
 import VerticalLinks from '../VerticalLink/vertical-link.component';
 import Link from 'next/link';
+import type { verticalLinks } from '@/app/constants/Types/api-data';
 
 type propsType = {
     name: string,
-    subTitle: string
+    subTitle: string,
+    verticalLinks: verticalLinks[]
 }
 
 export default function HeroHeader(props: propsType): JSX.Element {

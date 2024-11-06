@@ -18,7 +18,7 @@ export default async function Home(): Promise<JSX.Element> {
     return (
         <div className={`bg-black text-white h-dvh py-8 overflow-y-auto`} style={{ scrollbarWidth: "none" }}>
             <Nav />
-            <HeroHeader name={data.name} subTitle={data.subTitle} />
+            <HeroHeader name={data.name} subTitle={data.subTitle} verticalLinks={data.verticalLinks} />
             <About aboutMe={data.aboutMe}/>
             <SkillsSection>
                 {

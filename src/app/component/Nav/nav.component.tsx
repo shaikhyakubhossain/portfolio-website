@@ -1,6 +1,5 @@
 import styles from './nav.module.scss'
 
-
 export default function Nav(): JSX.Element {
     return (
         <div className={`${styles.mainContainer} flex justify-between font-semibold fixed top-0 left-0 right-0 px-20 bg-slate-800 shadow-lg h-12`}>

@@ -3,7 +3,8 @@ export type data = {
     subTitle: string,
     aboutMe: string,
     skillsList: skillListType[],
-    projectsList: projectList[]
+    projectsList: projectList[],
+    verticalLinks: verticalLinks[]
 }
 
 export type skillListType = {
@@ -23,4 +24,10 @@ export type projectList = {
 export type projectLinks = {
     name: string,
     url: string
+}
+
+export type verticalLinks = {
+    name: string,
+    url: string,
+    icon: string
 }
