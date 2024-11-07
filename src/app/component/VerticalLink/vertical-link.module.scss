@@ -1,7 +1,10 @@
-.mainContainer {
-}
+@use '../../constants/CssUtils/color.scss';
 
 .verticalDash {
     width: 2px;
     border-bottom: 50px solid white;
+}
+
+.verticalLinkContainer:hover {
+    box-shadow: 0px 0px 10px 2px color.$colorPrimary;
 }
