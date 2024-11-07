@@ -14,7 +14,7 @@ export default async function Home(): Promise<JSX.Element> {
 
     const response = await fetch("http://localhost:4000/userSkillsData", { cache: "no-store" });
     const data: data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     return (
         <div className={`bg-black text-white h-dvh py-8 overflow-y-auto`} style={{ scrollbarWidth: "none" }}>
