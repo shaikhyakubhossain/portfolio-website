@@ -3,6 +3,7 @@
 .btn {
     color: color.$colorPrimary;
     border-color: color.$colorPrimary;
+    transition: color 200ms, background-color 200ms, box-shadow 200ms;
 }
 
 .btn:hover {

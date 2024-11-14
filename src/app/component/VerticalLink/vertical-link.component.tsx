@@ -16,7 +16,7 @@ export default function VerticalLink(props: propsType): JSX.Element {
         {props.verticalLink && props.verticalLink.map((item, index) => (
           <Link  key={index} href={item.url}>
             <div className={`${styles.verticalLinkContainer} rounded-full my-2`}>
-              <img className="w-7 h-7 bg-white rounded-full" src={item.icon} alt={item.name} />
+              <img className={`w-7 h-7 bg-${item.name === "Github" ? "white rounded-full" : "transparent"}`} src={item.icon} alt={item.name} />
             </div>
           </Link>
         ))}

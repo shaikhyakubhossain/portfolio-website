@@ -18,7 +18,7 @@ const ProjectCard = (props: projectList) => {
             </div>
             <div className={`${styles.projectLinksContainer} flex flex-wrap`}>
                 {
-                    props.projectLinks.map((item, index) => <div key={index}><Link href={item.url}><Button customTW={`mx-1 text-green-200 hover:text-black hover:bg-green-200 border-green-200`}>{item.name}</Button></Link></div>)
+                    props.projectLinks.map((item, index) => <div key={index}><Link href={item.url}><Button customTW={`mx-1 text-green-200 hover:!text-black hover:bg-green-200 border-green-200`}>{item.name}</Button></Link></div>)
                 }
             </div>
             </div>
