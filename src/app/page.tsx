@@ -19,7 +19,7 @@ export default async function Home(): Promise<JSX.Element> {
     return (
         <div className={`bg-black text-white h-dvh py-8 overflow-y-auto`} style={{ scrollbarWidth: "none" }}>
             <Nav />
-            <HeroHeader name={data.name} subTitle={data.subTitle} verticalLinks={data.verticalLink} />
+            <HeroHeader name={data.name} subTitle={data.subTitle} heroImage={data.heroImage} verticalLinks={data.verticalLink} />
             <About aboutMe={data.aboutMe}/>
             <SkillsSection>
                 {
