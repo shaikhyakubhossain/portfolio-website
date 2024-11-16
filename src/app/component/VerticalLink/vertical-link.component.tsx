@@ -8,7 +8,7 @@ type propsType = {
 
 export default function VerticalLink(props: propsType): JSX.Element {
   return (
-    <div className={`${styles.mainContainer} absolute right-32 top-14`}>
+    <div className={`${styles.mainContainer} absolute right-40 max-[680px]:right-4 top-14`}>
       <div className={`${styles.verticalDashContainer}`}>
         <div className={`${styles.verticalDash} mx-auto`}></div>
       </div>

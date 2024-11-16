@@ -12,4 +12,9 @@
 
 .mainContainer {
     z-index: 1;
+    transition: box-shadow 300ms;
+}
+
+.mainContainer:hover {
+    box-shadow: 1px 1px 80px 1px rgba(c.$colorPrimary, 0.4);
 }
