@@ -1,48 +1,59 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import styles from './auto-type-effect.module.scss';
 
 type propsType = {
-    subTitle: string
+    subTitles: string[]
 };
 
 export default function AutoTypeEffect(props: propsType): JSX.Element {
     const elemRef = useRef<HTMLSpanElement | null>(null);
 
-    const [shouldErase, setShouldErase] = useState<boolean>(false);
-    const [indexToAdd, setIndexToAdd] = useState<number>(0);
-
     useEffect(() => {
         const elem = elemRef.current;
         let typingInterval: any;
+        let eraseDelay: any;
+        let indexToType = 0;
+        let indexToAdd = 0;
+        let shouldErase = false;
         if (elem) {
             typingInterval = setInterval(() => {
-            console.log(indexToAdd, shouldErase);
-            if(indexToAdd === props.subTitle.length - 1) {
+            // console.log(indexToAdd, shouldErase);
+            if(indexToAdd === props.subTitles[indexToType].length) {
                 // clearInterval(typingInterval);
-                setShouldErase(true);
+                // setShouldErase(true);
+                shouldErase = true;
             }
-            else if(indexToAdd === 1){
+            else if(indexToAdd === 0 && shouldErase){
                 // clearInterval(typingInterval);
-                setShouldErase(false);
+                // setShouldErase(false);
+                indexToType++;
+                shouldErase = false;
+            }
+            
+            if(indexToType === props.subTitles.length){
+                indexToType = 0;
+                indexToAdd = 0;
             }
 
-                if(!shouldErase){
-                    elem.textContent += props.subTitle[indexToAdd];
-                    setIndexToAdd(prev => prev + 1);
+                if(!shouldErase && props.subTitles[indexToType][indexToAdd]){
+                    elem.textContent += props.subTitles[indexToType][indexToAdd];
+                    // setIndexToAdd(prev => prev + 1);
+                    indexToAdd++;
                 }
                 else{
-                    elem.textContent = elem.textContent && elem.textContent.slice(0, elem.textContent.length - 1);
-                    setIndexToAdd(prev => prev - 1);
+                    elem.textContent = elem.textContent && elem.textContent.slice(0, -1);
+                    // setIndexToAdd(prev => prev - 1);
+                    indexToAdd--;
 
                 }
             }, 100);
-            
         }
         return () => {
             clearInterval(typingInterval);
+            clearTimeout(eraseDelay);
         }
-    }, [shouldErase, indexToAdd]);
+    }, []);
 
     useEffect(() => {
         const elem = elemRef.current;

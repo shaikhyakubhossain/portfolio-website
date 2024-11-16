@@ -1,6 +1,6 @@
 export type data = {
     name: string,
-    subTitle: string,
+    subTitles: string[],
     heroImage: string,
     aboutMe: string,
     skillsList: skillListType[],
