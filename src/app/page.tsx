@@ -10,7 +10,7 @@ import type { data, skillListType } from '../app/constants/Types/api-data'
 
 export default async function Home(): Promise<JSX.Element> {
 
-    const response = await fetch(`http://portfolio-website-backend-in-nodejs.vercel.app/userSkillsData `, { cache: "no-store" });
+    const response = await fetch(`https://portfolio-website-backend-in-nodejs.vercel.app/userSkillsData `, { cache: "no-store" });
     // const response = await fetch(`http://localhost:4000/userSkillsData `, { cache: "no-store" });
     const data: data = await response.json();
     // console.log(data);
