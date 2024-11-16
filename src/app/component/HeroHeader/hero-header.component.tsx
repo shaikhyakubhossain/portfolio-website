@@ -3,6 +3,7 @@ import Button from '../Button/button.component';
 import VerticalLinks from '../VerticalLink/vertical-link.component';
 import AutoTypeEffect from '../AutoTypeEffect/auto-type-effect.component';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { verticalLink } from '@/app/constants/Types/api-data';
 
 type propsType = {
@@ -20,7 +21,7 @@ export default function HeroHeader(props: propsType): JSX.Element {
                 <div className={`${styles.heroText} my-6 text-2xl text-white`}>I&apos;M <span className={`${styles.heroName} text-4xl`}>{props.name}</span><br />A <AutoTypeEffect subTitles={props.subTitles} /></div>
                 <Link href={'#Contact'}><Button customTW='text-yellow-300 hover:!text-black hover:bg-yellow-300'>Contact Me</Button></Link>
             </div>
-            <div className={`${styles.heroImage} flex`}><img className={`max-w-[420px] max-h-[420px] rounded-full`} src={props.heroImage} /></div>
+            <div className={`${styles.heroImage} flex min-w-[420px] min-h-[420px]`}><Image quality={100}  width={420} height={420} className={`min-w-[420px] min-h-[420px] rounded-full`} src={props.heroImage} alt='hero-image' /></div>
             </div>
             <VerticalLinks verticalLink={props.verticalLinks} />
         </div>
