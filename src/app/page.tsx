@@ -8,11 +8,10 @@ import Nav from './component/Nav/nav.component';
 import ProjectsSection from './component/ProjectsSection/projects-section.component';
 import type { data, skillListType } from '../app/constants/Types/api-data'
 
-
-
 export default async function Home(): Promise<JSX.Element> {
 
-    const response = await fetch("http://localhost:4000/userSkillsData", { cache: "no-store" });
+    const response = await fetch(`http://portfolio-website-backend-in-nodejs.vercel.app/userSkillsData `, { cache: "no-store" });
+    // const response = await fetch(`http://localhost:4000/userSkillsData `, { cache: "no-store" });
     const data: data = await response.json();
     // console.log(data);
 
