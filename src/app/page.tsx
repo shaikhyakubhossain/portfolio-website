@@ -10,8 +10,8 @@ import type { data, skillListType } from '../app/constants/Types/api-data'
 
 export default async function Home(): Promise<JSX.Element> {
 
-    // const url = "https://portfolio-website-backend-in-nodejs.vercel.app/userSkillsData"
-    const url = "http://localhost:4000/userSkillsData"
+    const url = "https://portfolio-website-backend-in-nodejs.vercel.app/userSkillsData"
+    // const url = "http://localhost:4000/userSkillsData"
 
     const response = await fetch(url, { 
         method: "GET",
