@@ -5,7 +5,8 @@ export type data = {
     aboutMe: string,
     skillsList: skillListType[],
     projectsList: projectList[],
-    verticalLink: verticalLink[]
+    verticalLink: verticalLink[],
+    error?: string
 }
 
 export type skillListType = {
