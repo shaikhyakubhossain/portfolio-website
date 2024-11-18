@@ -26,7 +26,7 @@ export default async function Home(): Promise<JSX.Element> {
       <div className='bg-black text-center items-center text-2xl flex justify-center font-semibold text-red-400 h-dvh py-8'>{data.error}</div>
     ) : (
       <div
-        className={`bg-black text-white h-dvh py-8 overflow-y-auto`}
+        className={`bg-black text-white h-dvh py-8 overflow-y-auto scroll-smooth`}
         style={{ scrollbarWidth: "none" }}
       >
         <Nav />
