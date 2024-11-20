@@ -1,5 +1,5 @@
 "use client"; 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./contact-me.module.scss";
 import SectionHeader from "../SectionHeader/section-header.component";
 import Button from "../Button/button.component";
@@ -8,17 +8,10 @@ import contactFormAction from "../../../actions/contactFormAction";
 export default function ContactMe(): JSX.Element {
 
   const [outputMessage, setOutputMessage] = useState<string>("");
-  const [showLoading, setShowLoading] = useState<boolean>(false);
 
   const handleFormAction = async (formData: FormData) => {
-    console.log("hello");
-    console.log("hi");
     setOutputMessage(await contactFormAction(formData));
   }
-
-  useEffect(() => {
-
-  }, [outputMessage]);
 
   return (
     <div id="Contact" className="flex justify-center mt-60">
