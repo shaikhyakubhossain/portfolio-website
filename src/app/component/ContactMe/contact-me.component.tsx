@@ -1,19 +1,37 @@
+"use client"; 
+import { useState, useEffect } from "react";
 import styles from "./contact-me.module.scss";
-import Button from "../Button/button.component";
 import SectionHeader from "../SectionHeader/section-header.component";
+import Button from "../Button/button.component";
+import contactFormAction from "../../../actions/contactFormAction";
 
-type propsType = {};
+export default function ContactMe(): JSX.Element {
 
-export default function ContactMe(props: propsType): JSX.Element {
+  const [outputMessage, setOutputMessage] = useState<string>("");
+  const [showLoading, setShowLoading] = useState<boolean>(false);
+
+  const handleFormAction = async (formData: FormData) => {
+    console.log("hello");
+    console.log("hi");
+    setOutputMessage(await contactFormAction(formData));
+  }
+
+  useEffect(() => {
+
+  }, [outputMessage]);
+
   return (
     <div id="Contact" className="flex justify-center mt-60">
         <div className={`${styles.innerMainContainer} max-w-96 flex-grow`}>
       <SectionHeader title={'Contact Me'} />
       <div className={`${styles.subMainContainer} text-black bg-slate-800 shadow-2xl shadow-slate-700 rounded-lg p-10`}>
-        <div><input type="text" placeholder="Name" /></div>
-        <div><input type="text" placeholder="Email" /></div>
-        <div><textarea placeholder="Message" /></div>
-        <div className="text-center"><Button>Submit</Button></div>
+        <form action={handleFormAction} className={`${styles.formContainer} flex flex-col`}>
+        <div><input type="text" name={"name"} required placeholder="Name" /></div>
+        <div><input type="text" name={"email"} required placeholder="Email" /></div>
+        <div><textarea name={"message"} required placeholder="Message" /></div>
+        {outputMessage && <div className="text-center text-white">{outputMessage}</div>}
+        <div className="flex justify-center"><Button type="submit" onClick={() => setOutputMessage("Sending...")} customTW="text-white bg-green-600 hover:!text-black hover:bg-green-300 border-green-600">Submit</Button></div>
+        </form>
       </div>
       </div>
     </div>

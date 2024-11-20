@@ -1,8 +1,8 @@
-.subMainContainer > div {
+.subMainContainer > form > div {
     margin: 16px 0 16px 0;
 }
 
-.subMainContainer > div > input, .subMainContainer > div > textarea {
+.subMainContainer > form > div > input, .subMainContainer > form > div > textarea {
     width: 100%;
     padding: 8px;
     border-radius: 4px;
