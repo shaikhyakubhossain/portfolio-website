@@ -4,7 +4,7 @@ export default async function contactFormAction(formData: FormData): Promise<str
     // const url = 'http://localhost:4000';
     let result: string = ''
 
-    const data = await fetch(`${url}/contactForm`, { 
+    const response = await fetch(`${url}/contactForm`, { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -17,8 +17,9 @@ export default async function contactFormAction(formData: FormData): Promise<str
         }),
         cache: "no-cache"
        });
-       const response = await data.json();
-       if(response.error) result = response.error;
-       else result = response.message;
+       const data = await response.json();
+       console.log(data);
+       if(data.error) result = data.error;
+       else result = data.message;
        return result;
 }
