@@ -1,8 +1,13 @@
 "use client";
 import { useState } from "react";
 import styles from './nav.module.scss'
+import HamburgerIcon from "../HamburgerIcon/hamburger.component";
 
-export default function Nav(): JSX.Element {
+type propsType = {
+    heroName: string;
+}
+
+export default function Nav(props: propsType): JSX.Element {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,8 +25,8 @@ export default function Nav(): JSX.Element {
 
     return (
         <div className={`${styles.mainContainer} flex justify-between font-semibold fixed top-0 left-0 right-0 px-20 bg-slate-800 shadow-lg h-12`}>
-            <div className={`${styles.leftContainer} ${styles.portfolioTextContainer} my-auto`}><div>Portfolio.</div></div>
-            <button className='min-[730px]:hidden' onClick={() => setMenuOpen(!menuOpen)}>Menu</button>
+            <div className={`${styles.leftContainer} ${styles.portfolioTextContainer} my-auto`}><div>{props.heroName}</div></div>
+            <button className='min-[730px]:hidden' onClick={() => setMenuOpen(!menuOpen)}><HamburgerIcon /></button>
             {menuOpen && <div className='absolute right-16 top-11 bg-slate-800 text-left p-4 pl-0 min-[730px]:hidden'>
                 {menu(true)}
             </div>}
