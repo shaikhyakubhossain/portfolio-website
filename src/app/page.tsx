@@ -1,12 +1,6 @@
 import './globals.css'
-import HeroHeader from "./component/HeroHeader/hero-header.component";
-import About from './component/About/about.component';
-import ContactMe from './component/ContactMe/contact-me.component';
-import SkillsSection from './component/SkillsSection/skills-section.component';
-import SkillCard from './component/SkillCard/skill-card.component';
-import Nav from './component/Nav/nav.component';
-import ProjectsSection from './component/ProjectsSection/projects-section.component';
-import type { data, skillListType } from '../app/constants/Types/api-data'
+import ComponentsWrapper from './component/ComponentsWrapper/components-wrapper.component';
+import type { data } from '../app/constants/Types/api-data'
 
 export default async function Home(): Promise<JSX.Element> {
 
@@ -25,39 +19,6 @@ export default async function Home(): Promise<JSX.Element> {
     return data.error ? (
       <div className='bg-black text-center items-center text-2xl flex justify-center font-semibold text-red-400 h-dvh py-8'>{data.error}</div>
     ) : (
-      <div
-        className={`bg-black text-white h-dvh py-8 overflow-y-auto scroll-smooth`}
-        style={{ scrollbarWidth: "none" }}
-      >
-        <Nav heroName={data.name} />
-        <HeroHeader
-          name={data.name}
-          subTitles={data.subTitles}
-          heroImage={data.heroImage}
-          verticalLinks={data.verticalLink}
-        />
-        <About aboutMe={data.aboutMe} />
-        <SkillsSection>
-          {data.skillsList
-            ? data.skillsList.map(
-                (item: skillListType, index: number): JSX.Element | false => {
-                  return (
-                    item.skillIcon !== "" && (
-                      <SkillCard
-                        key={index}
-                        skillIcon={item.skillIcon}
-                        skillTitle={item.skillTitle}
-                      />
-                    )
-                  );
-                }
-              )
-            : null}
-        </SkillsSection>
-        {data.projectsList ? (
-          <ProjectsSection projectList={data.projectsList} />
-        ) : null}
-        <ContactMe />
-      </div>
+      <ComponentsWrapper data={data} />
     );
 };
