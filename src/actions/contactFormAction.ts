@@ -4,7 +4,7 @@ export default async function contactFormAction(formData: FormData): Promise<str
     // const url = 'http://localhost:4000';
     let result: string = ''
 
-    const response = await fetch(`${url}/contactForm`, { 
+    const response = await fetch(`${url}/api/ContactForm`, { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
